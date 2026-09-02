@@ -75,7 +75,7 @@ COPY --from=BUILDER /app/prisma ./prisma
 COPY src/database/scripts/entrypoint.sh /app/entrypoint.sh
 COPY src/database/scripts/safe-migration.sh /app/safe-migration.sh
 
-EXPOSE ${PORT}
+EXPOSE ${PORT?:-4000}
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=45s --retries=3 \
     CMD wget -qO- http://127.0.0.1:${PORT}/api/health/live || exit 1
