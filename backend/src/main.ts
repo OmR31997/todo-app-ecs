@@ -25,6 +25,10 @@ async function bootstrap() {
     res.json({ message: 'OK', success: true });
   });
 
+  app.getHttpAdapter().getInstance().get('/api/health/live', (req, res) => {
+    res.json({ message: 'Application Health is Good!', success: true });
+  });
+
   const configService = app.get(ConfigService);
   const port = configService.get<number>('port', 3000);
 
