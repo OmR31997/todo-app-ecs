@@ -66,8 +66,8 @@ COPY --from=BUILDER /app/node_modules/@prisma ./node_modules/@prisma
 
 COPY --from=BUILDER /app/prisma ./prisma
 
-COPY src/database/scripts/entrypoint.sh /app/entrypoint.sh
-COPY src/database/scripts/safe-migration.sh /app/safe-migration.sh
+COPY src/database/scripts/entrypoint.sh /entrypoint.sh
+COPY src/database/scripts/safe-migration.sh /safe-migration.sh
 
 EXPOSE ${PORT?:-4000}
 
