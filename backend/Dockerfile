@@ -50,12 +50,6 @@ RUN apk add --no-cache \
     openssl \
     libc6-compat \
     wget \
-    chromium \
-    nss \
-    freetype \
-    harfbuzz \
-    ttf-freefont \
-    udev \
     ca-certificates
 
 COPY package.json package-lock.json ./
