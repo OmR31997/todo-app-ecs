@@ -68,6 +68,7 @@ COPY --from=BUILDER /app/prisma ./prisma
 
 COPY src/database/scripts/entrypoint.sh /entrypoint.sh
 COPY src/database/scripts/safe-migration.sh /safe-migration.sh
+COPY src/database/scripts/redis.clear.js ./src/database/scripts/redis.clear.js
 
 EXPOSE ${PORT?:-4000}
 

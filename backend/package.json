@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "db:update": "npx prisma db push && npx prisma generate",
     "db:deploy": "npx prisma migrate deploy && npx prisma generate",
-    "redis:clear": "ts-node src/database/scripts/redis.clear.ts",
+    "redis:clear": "node src/database/scripts/redis.clear.js",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "cross-env NODE_ENV=development nest start --debug --watch",
