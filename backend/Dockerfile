@@ -10,7 +10,7 @@ RUN apk add --no-cache openssl libc6-compat
 
 COPY package.json package-lock.json ./
 
-RUN npm ci
+RUN npm ci && npm cache clean --force
 
 # ==============================
 # Build stage
@@ -56,7 +56,7 @@ COPY package.json package-lock.json ./
 
 COPY prisma ./prisma
 
-RUN npm ci --omit=dev 
+RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=BUILDER /app/dist ./dist
 
